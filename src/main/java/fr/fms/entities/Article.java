@@ -34,8 +34,8 @@ public class Article implements Serializable {
 		this.brand = brand;
 		this.price = price;
 	}
+	
 	public Article() {
-		super();
 	}
 	
 	
@@ -65,11 +65,18 @@ public class Article implements Serializable {
 		this.price = price;
 	}
 	
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
-	// Methode ToString
+	
 	@Override
 	public String toString() {
-		return "Article [id=" + id + ", description=" + description + ", brand=" + brand + ", price=" + price + "]";
+		return "Article [id=" + id + ", description=" + description + ", brand=" + brand + ", price=" + price
+				+ ", category=" + category + "]";
 	}
 	
 	

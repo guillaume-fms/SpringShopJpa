@@ -50,27 +50,35 @@ public class SpringShopJpaApplication implements CommandLineRunner {
 	    articleRepository.save(new Article("XPS", "Dell", 1380, pc));
 		
 		
-		for(Article article : articleRepository.findByBrandAndPrice("SamSung",290)) {
-			System.out.println();
-			System.out.println("***************** ARTICLES ***************** ");
+//		for(Article article : articleRepository.findByBrandAndPrice("SamSung",290)) {
+//			System.out.println();
+//			System.out.println("***************** ARTICLES Brand and Price ***************** ");
+//			System.out.println(article);
+//			System.out.println("***************** ARTICLES Brand and Price ***************** ");
+//			System.out.println();
+//		}
+//		
+//		for(Article article : articleRepository.findByBrandAndPriceGreaterThan("SamSung",350)) {
+//			System.out.println();
+//			System.out.println("***************** ARTICLES Brand And Price GreaterThan ***************** ");
+//			System.out.println(article);
+//			System.out.println("***************** ARTICLES Brand And Price GreaterThan ***************** ");
+//			System.out.println();
+//		}
+	    
+	    for(Article article : articleRepository.searchArticles("sung", 200)) {
+	    	System.out.println();
+			System.out.println("***************** ARTICLES searchArticles ***************** ");
 			System.out.println(article);
-			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println("***************** ARTICLES searchArticles ***************** ");
 			System.out.println();
-		}
+	    }
 		
-		for(Article article : articleRepository.findByBrandAndPriceGreaterThan("SamSung",350)) {
+		for(Article article : articleRepository.findByCategoryId((long) 2)) {
 			System.out.println();
-			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println("***************** ARTICLES findByCategoryId ***************** ");
 			System.out.println(article);
-			System.out.println("***************** ARTICLES ***************** ");
-			System.out.println();
-		}
-		
-		for(Article article : articleRepository.findByCategoryId((long) 1)) {
-			System.out.println();
-			System.out.println("***************** ARTICLES ***************** ");
-			System.out.println(article);
-			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println("***************** ARTICLES findByCategoryId ***************** ");
 			System.out.println();
 		}
 	}
