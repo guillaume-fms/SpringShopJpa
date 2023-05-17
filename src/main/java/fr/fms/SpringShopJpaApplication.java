@@ -16,7 +16,7 @@ import fr.fms.entities.Category;
 public class SpringShopJpaApplication implements CommandLineRunner {
 	@Autowired
 	private CategoryRepository categoryRepository;
-	
+
 	@Autowired
 	private ArticleRepository articleRepository;
 
@@ -26,9 +26,53 @@ public class SpringShopJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		categoryRepository.save(new Category("Smartphone"));
-		articleRepository.save(new Article("S9", "SamSung", 250));
 		
+		Category smartphone = categoryRepository.save(new Category("SmartPhone"));
+		Category tablet = categoryRepository.save(new Category("Tablet"));
+		Category pc = categoryRepository.save(new Category("PC"));
+		
+		//categoryRepository.save(new Category("Smartphone"));
+		//articleRepository.save(new Article("S9", "SamSung", 250));
+		
+		// Smartphones
+		articleRepository.save(new Article("S10", "SamSung", 450, smartphone));
+	    articleRepository.save(new Article("S9", "SamSung", 250, smartphone));
+	    articleRepository.save(new Article("MI10", "Xiaomi", 180, smartphone));
+	    articleRepository.save(new Article("G60", "Nokia", 249, smartphone));
+	    
+	    // Tablet
+	    articleRepository.save(new Article("GalaxyTab", "SamSung", 480, tablet));
+	    articleRepository.save(new Article("Ipad", "Apple", 680, tablet));		
+	    articleRepository.save(new Article("T21", "Nokia", 380, tablet));
+	    
+	    // PC
+	    articleRepository.save(new Article("R510", "Asus", 600, pc));		
+	    articleRepository.save(new Article("XPS", "Dell", 1380, pc));
+		
+		
+		for(Article article : articleRepository.findByBrandAndPrice("SamSung",290)) {
+			System.out.println();
+			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println(article);
+			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println();
+		}
+		
+		for(Article article : articleRepository.findByBrandAndPriceGreaterThan("SamSung",350)) {
+			System.out.println();
+			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println(article);
+			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println();
+		}
+		
+		for(Article article : articleRepository.findByCategoryId((long) 1)) {
+			System.out.println();
+			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println(article);
+			System.out.println("***************** ARTICLES ***************** ");
+			System.out.println();
+		}
 	}
 
 }
