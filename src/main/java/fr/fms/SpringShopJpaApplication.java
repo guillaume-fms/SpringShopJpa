@@ -66,15 +66,16 @@ public class SpringShopJpaApplication implements CommandLineRunner {
 //			System.out.println();
 //		}
 	    
-	    for(Article article : articleRepository.searchArticles("sung", 200)) {
-	    	System.out.println();
-			System.out.println("***************** ARTICLES searchArticles ***************** ");
-			System.out.println(article);
-			System.out.println("***************** ARTICLES searchArticles ***************** ");
-			System.out.println();
-	    }
+//	    for(Article article : articleRepository.searchArticles("sung", 200)) {
+//	    	System.out.println();
+//			System.out.println("***************** ARTICLES searchArticles ***************** ");
+//			System.out.println(article);
+//			System.out.println("***************** ARTICLES searchArticles ***************** ");
+//			System.out.println();
+//	    }
 		
-		for(Article article : articleRepository.findByCategoryId((long) 2)) {
+		for(Article article : articleRepository.findByCategoryId((long) 3)) {
+			
 			System.out.println();
 			System.out.println("***************** ARTICLES findByCategoryId ***************** ");
 			System.out.println(article);
