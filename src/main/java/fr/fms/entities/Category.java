@@ -2,7 +2,6 @@ package fr.fms.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,10 +30,15 @@ public class Category  {
 		this.name = name;
 	}
 
-	public Category() {
+	public Category(Long id, String name, Collection<Article> articles) {
+		this.id = id;
+		this.name = name;
+		this.articles = articles;
 	}
 
-
+	public Category() {
+	}
+	
 	// Getters and Setters
 	public Long getId() {
 		return id;

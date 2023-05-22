@@ -37,6 +37,7 @@ public class Article implements Serializable {
 		this.brand = brand;
 		this.price = price;
 		this.category = category;
+		
 	}
 	// Constructeur
 	public Article(String description, String brand, double price) {
@@ -83,10 +84,13 @@ public class Article implements Serializable {
 	}
 	
 	
-	@Override
-	public String toString() {
-		return "Article [id=" + id + ", description=" + description + ", brand=" + brand + ", price=" + price
-				+ ", category=" + category + "]";
+	//@Override
+	//public String toString() {
+	//	return "Article [id=" + id + ", description=" + description + ", brand=" + brand + ", price=" + price
+	//			+ ", category=" + category + "]";
+	//}
+	public String centerString(String string) {
+		return centerString(String.valueOf(id)) + centerString(description) + centerString(brand) + centerString(String.valueOf(price)) + centerString(category.getName());
 	}
 	
 	
