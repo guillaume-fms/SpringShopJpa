@@ -36,6 +36,7 @@ croissant puis décroissant.
 **************************************************************************************************************************************************
 
 TP Shop (version Spring en mode console)
+
    • Vous allez réaliser la console d’administration d’une appli E-Commerce, celle-ci permet :
 
   • Afficher tous les articles en base
