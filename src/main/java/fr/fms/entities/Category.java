@@ -2,6 +2,10 @@ package fr.fms.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7645faae9689e4967ccc67c230111891486a14de
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -2,7 +2,10 @@ package fr.fms.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -19,14 +22,14 @@ public interface ArticleRepository extends JpaRepository<Article,Long> {
 	public List<Article> findByBrandAndPriceGreaterThan(String brand, double price);
 	public List<Article> findByCategoryId(Long categoryId);
 	
+
 	//@Query("select A from Article A where A.brand like %:x% and A.price > :y")	
 	//public List<Article> searchArticles(@Param("x") String kw, @Param("y")double price);
 	
 	
 	// exo 1.2
 		//public List<Article> findByDescription(String description);
-	// exo 1.2
-	
+
 	
 	// exo 1.3
 	//public List<Article> findByBrandAndDescription(String brand, String description);
@@ -43,6 +46,38 @@ public interface ArticleRepository extends JpaRepository<Article,Long> {
 	
 
 	
+
+	//public List<Article> saveById(int id);
+	public void getById(long id);
+	
+	
+	@Query("select A from Article A where A.brand like %:x% and A.price > :y")	
+	public List<Article> searchArticles(@Param("x") String kw, @Param("y")double price);
+
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+>>>>>>> 7645faae9689e4967ccc67c230111891486a14de
 }
 
 
